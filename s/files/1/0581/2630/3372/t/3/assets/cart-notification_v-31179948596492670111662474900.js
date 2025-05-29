@@ -105,7 +105,7 @@ customElements.define('cart-notification', CartNotification);
     closeBtn.textContent = "×";
     closeBtn.style.position = "absolute";
     closeBtn.style.top = "50%";
-    closeBtn.style.right = "-48%";
+    closeBtn.style.right = "-0.1%";
     closeBtn.style.transform = "translateY(-50%)";
     closeBtn.style.background = "none";
     closeBtn.style.border = "none";
