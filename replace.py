@@ -163,7 +163,7 @@ def replace_menu_in_files(directory):
 
 if __name__ == "__main__":
     # Fixed path input - use raw string for Windows paths
-    project_directory = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\tax-bill"
+    project_directory = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\utility-bill"
     
     if os.path.isdir(project_directory):
         replace_menu_in_files(project_directory)
