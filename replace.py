@@ -50,7 +50,7 @@ def replace_menu_in_files(directory):
                                                     class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
                                                     Utility bill
                                                 </a></li>
-                                            <li><a href="../utility-bill.html"
+                                            <li><a href="../business-utility-bill.html"
                                                     class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
                                                     Business utility bill
                                                 </a></li>
@@ -163,7 +163,7 @@ def replace_menu_in_files(directory):
 
 if __name__ == "__main__":
     # Fixed path input - use raw string for Windows paths
-    project_directory = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\business-registration-certificate"
+    project_directory = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\credit-card"
     
     if os.path.isdir(project_directory):
         replace_menu_in_files(project_directory)
