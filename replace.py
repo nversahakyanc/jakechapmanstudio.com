@@ -4,132 +4,133 @@ import re
 def replace_menu_in_files(directory):
     # Define the complete menu HTML
     complete_menu = """
-<ul class="list-menu list-menu--inline" role="list">
-                        <li><a href="../index.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Home</span>
-                            </a></li>
-                        <li><a href="../about.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>About</span>
-                            </a></li>
-                        <li><a href="../books.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Books</span>
-                            </a></li>
-                        <li><a href="../collections.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Other Works</span>
-                            </a></li>
-                        <li><a href="../contact.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Contact</span>
-                            </a></li>
-                        <li><a href="../passport.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Passport</span>
-                            </a></li>
-                        <li><a href="../driving-license.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Driving license</span>
-                            </a></li>
-                        <li><a href="../id-card.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>ID card</span>
-                            </a></li>
-                        <li><a href="../car-title.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Car title</span>
-                            </a></li>
-                        <li><a href="../residence-permit.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Residence permit</span>
-                            </a></li>
-                        <li><a href="../utility-bill.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Utility bill</span>
-                            </a></li>
-                        <li><a href="../business-utility-bill.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Business utility bill</span>
-                            </a></li>
-                        <li><a href="../travel-visa.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Travel visa</span>
-                            </a></li>
-                        <li><a href="../mix.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Mix</span>
-                            </a></li>
-                        <li><a href="../diploma.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>diploma</span>
-                            </a></li>
-                        <li><a href="../invoice.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Invoice</span>
-                            </a></li>
-                        <li><a href="../ssn.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>SSN</span>
-                            </a></li>
-                        <li><a href="../arrival-card.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Arrival card</span>
-                            </a></li>
-                        <li><a href="../certificate.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Certificate</span>
-                            </a></li>
-                        <li><a href="../business-registration-certificate.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Business registration certificate</span>
-                            </a></li>
-                        <li><a href="../student-ID.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Student ID</span>
-                            </a></li>
-                        <li><a href="../car-insurance.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Car Insurance</span>
-                            </a></li>
-                        <li><a href="../tax-bill.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Tax bill</span>
-                            </a></li>
-                        <li><a href="../receipt.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Receipt</span>
-                            </a></li>
-                        <li><a href="../paystub.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Paystub</span>
-                            </a></li>
-                        <li><a href="../bank-statement.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Bank statement</span>
-                            </a></li>
-                        <li><a href="../business-bank-statement.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Business bank statement</span>
-                            </a></li>
-                        <li><a href="../credit-card.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Credit card</span>
-                            </a></li>
-                        <li><a href="../business-credit-card.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Business credit card</span>
-                            </a></li>
-                            <li><a href="../universal.html"
-                                class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
-                                <span>Universal</span>
-                            </a></li>
-                    </ul>"""
+<ul class="menu-drawer__menu has-submenu list-menu" role="list">
+                                            <li><a href="../index.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset menu-drawer__menu-item--active">
+                                                    Home
+                                                </a></li>
+                                            <li><a href="../about.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                                                    aria-current="page">
+                                                    About
+                                                </a></li>
+                                            <li><a href="../books.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Books
+                                                </a></li>
+                                            <li><a href="../collections.ht"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Other Works
+                                                </a></li>
+                                            <li><a href="../contact.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Contact
+                                                </a></li>
+                                            <li><a href="../passport.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Passports
+                                                </a></li>
+                                            <li><a href="../driving-license.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Driving license
+                                                </a></li>
+                                            <li><a href="../id-card.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    ID card
+                                                </a></li>
+                                            <li><a href="../car-title.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Car title
+                                                </a></li>
+                                            <li><a href="../residence-permit.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Residence permit
+                                                </a></li>
+                                            <li><a href="../utility-bill.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Utility bill
+                                                </a></li>
+                                            <li><a href="../utility-bill.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Business utility bill
+                                                </a></li>
+                                            <li><a href="../travel-visa.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Travel visa
+                                                </a></li>
+                                            <li><a href="../mix.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Mix
+                                                </a></li>
+                                            <li><a href="../diploma.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Diploma
+                                                </a></li>
+                                            <li><a href="../invoice.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Invoice
+                                                </a></li>
+                                            <li><a href="../ssn.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    SSN
+                                                </a></li>
+                                            <li><a href="../arrival-card.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Arrival card
+                                                </a></li>
+                                            <li><a href="../certificate.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Certificate
+                                                </a></li>
+                                            <li><a href="../business-registration-certificate.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Business registration certificate
+                                                </a></li>
+                                            <li><a href="../student-ID.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Student ID
+                                                </a></li>
+                                            <li><a href="../car-insurance.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Car Insurance
+                                                </a></li>
+                                            <li><a href="../tax-bill.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Tax bill
+                                                </a></li>
+                                            <li><a href="../receipt.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Receipt
+                                                </a></li>
+                                            <li><a href="../paystub.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Paystub
+                                                </a></li>
+                                            <li><a href="../bank-statement.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Bank statement
+                                                </a></li>
+                                            <li><a href="../business-bank-statement.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Business bank statement
+                                                </a></li>
+                                            <li><a href="../credit-card.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Credit card
+                                                </a></li>
+                                            <li><a href="../business-credit-card.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Business credit card
+                                                </a></li>
+                                                 <li><a href="../universal.html"
+                                                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                                                    Universal
+                                                </a></li>
+                                        </ul>"""
 
     # Pattern to match the opening ul tag and everything until the closing ul tag
     pattern = re.compile(
-        r'<ul class="list-menu list-menu--inline" role="list">.*?</ul>',
+        r'<ul class="menu-drawer__menu has-submenu list-menu" role="list">.*?</ul>',
         re.DOTALL
     )
 
@@ -162,7 +163,7 @@ def replace_menu_in_files(directory):
 
 if __name__ == "__main__":
     # Fixed path input - use raw string for Windows paths
-    project_directory = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\business-registration-certificate"
+    project_directory = r"C:\Users\eknya\Desktop\git\jakechapmanstudio.com\bank-statement"
     
     if os.path.isdir(project_directory):
         replace_menu_in_files(project_directory)
