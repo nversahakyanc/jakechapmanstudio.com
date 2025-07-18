@@ -162,7 +162,7 @@ def replace_menu_in_files(directory):
 
 if __name__ == "__main__":
     # Fixed path input - use raw string for Windows paths
-    project_directory = r"C:\Users\eknya\Desktop\git\jakechapmanstudio.com\business-utility-bills"
+    project_directory = r"C:\Users\eknya\Desktop\git\jakechapmanstudio.com\car-title"
     
     if os.path.isdir(project_directory):
         replace_menu_in_files(project_directory)
