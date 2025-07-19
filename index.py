@@ -29,7 +29,7 @@ def rename_jpg_files(directory):
 # Example usage:
 if __name__ == "__main__":
     # Use raw string for Windows paths or double backslashes
-    directory_path = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com\universal\images"
+    directory_path = r"C:\Users\Lenovo\OneDrive\Desktop\laspalmas88.com\jakechapmanstudio.com"
     
     # Verify directory exists
     if os.path.isdir(directory_path):
